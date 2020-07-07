@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
+    "build:hoge": "nuxt build hoge-service && nuxt export hoge-service",
+    "build:all": "nuxt build && nuxt export && npm run build:hoge && npm run merge:hoge",
+    "merge:hoge": "cp -a hoge-service/dist/ dist/hoge",
     "start": "nuxt start",
     "export": "nuxt export",
     "serve": "nuxt serve"
